@@ -62,7 +62,7 @@ func XGDMatrixCreateFromMat(data DMatrix, missing float32) (*DMatrixHandle, erro
 	dataC := make([]C.float, rows*cols)
 	for i, row := range data {
 		for j, v := range row {
-			dataC[i*rows+j] = C.float(v)
+			dataC[i*cols+j] = C.float(v)
 		}
 	}
 	var handlerPointer C.DMatrixHandle
